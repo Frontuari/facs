@@ -26,7 +26,7 @@
 				<div id="errorLongDesc">
 					<ul>
 					  <p>Para continuar usando el sistema debe corregir la fecha del sistema.</p>
-					  <p>Posteriormente puede volver aqui y presionar la techa F5, recargar la pagina o cerrar y volver a abrir el navegador.</p>
+					  <p>Posteriormente puede volver aqui y presionar la Tecla F5, recargar la pagina o cerrar y volver a abrir el navegador.</p>
 					</ul>
 				</div>
 			</div>

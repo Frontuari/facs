@@ -5,7 +5,7 @@
 		<title>Marcador Horario</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta name="description" content="Reloj para marcar la hora de entrada o de salida a una institución">
-		<meta name="author" content="T.S.U. Angel Emiro Antunez Villasmil">
+		<meta name="author" content="Ing Rafael konig">
 		<link href="<?php echo base_url()?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" /> 
 		<link href="<?php echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css">
 		<!-- Alertar con alertify-->
@@ -24,59 +24,17 @@
 			}
 		</script>
 	</head>
-	<body onload="javascript:launchFullScreen(document.documentElement);">
+	<body onload="javascript:launchFullScreen(document.documentElement);" style="background-color:#212121;">
 		<header>
 			<div class="col-md-12 text-center">
-				<b>BIENVENID@.!</b>
+				<b>BIENVENIDO</b>
 			</div>
 			<div id="cintillo" class="col-md-12">
-				<div class="marquesina" >
+				<div class="marquesina">
+					
 					<ul class="col-md-12 text-center">
-						<li>"La única forma de hacer un trabajo excelente es haciendo lo que amas". Steve Jobs </li>
-						<li>"Puede que debas pelear una batalla más de una vez para ganarla". Margaret Thatcher </li>
-						<li>"Te conviertes en aquello en lo que crees". Oprah Winfrey </li>
-						<li>"La felicidad no es algo hecho. Viene de nuestras acciones". Dalai Lama </li>
-						<li>"Si ves a alguien sin una sonrisa, dale la tuya". Dolly Parton </li>
-						<li>"La vida es muy interesante... Al final, algunas de las cosas que más nos lastiman se convierten en nuestras mayores fortalezas". Drew Barrymore </li>
-						<li>"Si amas la vida, no pierdas el tiempo, ya que de tiempo está hecha la vida". Bruce Lee </li>
-						<li>"La vida es eso que te sucede mientras estás ocupado haciendo otros planes". John Lennon </li>
-						<li>"Con el tiempo, la fama se me va a escapar. Se escapa de todos y lo único que te queda al final es la posibilidad de mirar atrás y ver las decisiones que tomaste". Matt Damon </li>
-						<li>"Todos seguimos soñando y, por suerte, los sueños sí se hacen realidad". Katie Holmes </li>
-						<li>"Creo que existe un poder interior que hace ganadores y perdedores. Y los ganadores son los que pueden realmente escuchar la verdad en sus corazones". Sylvester Stallone </li>
-						<li>"En la vida no hay arrepentimientos. Solo lecciones". Jennifer Aniston </li>
-						<li>"La imagen es una cosa y el ser humano es otra. Es muy difícil vivir a la altura de una imagen, digámoslo así". Elvis Presley </li>
-						<li>"Odié cada momento del entrenamiento, pero dije: 'No renuncies. Sufre ahora y vive el resto de tu vida como un campeón'". Muhammad Ali </li>
-						<li>"Una persona está sentada a la sombra hoy porque alguien plantó un árbol mucho tiempo atrás". Warren Buffett </li>
-						<li>"Soñemos con el mañana donde podamos amar realmente desde el alma y sepamos que el amor es la verdad máxima en el corazón de toda la creación". Michael Jackson </li>
-						<li>"Si aceptas las expectativas de otros, sobre todo las negativas, entonces nunca podrás cambiar el resultado<li>" Michael Jordan </li>
-						<li>"Aprender a estar quieto, realmente quieto y dejar que la vida suceda... esa quietud se convierte en un resplandor". Morgan Freeman </li>
-						<li>"Ochenta por ciento del éxito radica en estar". Woody Allen </li>
-						<li>"La gente olvidará lo que dijiste. Olvidarán lo que hiciste. Pero nunca olvidarán cómo los hiciste sentir". Maya Angelou </li>
-						<li>"Siempre parece imposible hasta que está hecho". Nelson Mandela </li>
-						<li>"La diferencia entre lo ordinario y lo extraordinario es ese algo extra". Jimmy Johnson </li>
-						<li>"Soñar, a fin de cuentas, es una forma de planificar". Gloria Steinem </li>
-						<li>"Es tu lugar en el mundo, es tu vida. Ve y haz lo que puedas con ella y conviértela en la vida que quieras vivir". Mae Jemison </li>
-						<li>"Cuanto más duro trabajo, más suerte tengo". Gary Player </li>
-						<li>"Los campeones siguen jugando hasta que les sale bien". Billie Jean King </li>
-						<li>"Siempre has un esfuerzo pleno, incluso cuando tengas todo en contra". Arnold Palmer </li>
-						<li>"El éxito es ir de fracaso en fracaso sin perder el entusiasmo". Winston Churchill </li>
-						<li>"Intenta no convertirte en una persona exitosa, en cambio, intenta convertirte en una persona valiosa". Albert Einstein </li>
-						<li>"Todos nuestros sueños se pueden hacer realidad si tenemos el coraje de seguirlos". Walt Disney </li>
-						<li>"Las cosas funcionan mejor para aquellos que sacan lo mejor de cómo funcionan las cosas". John Wooden </li>
-						<li>"Debes convertirte en el cambio que deseas ver en el mundo". Mahatma Gandhi </li>
-						<li>"No preguntes qué puede hacer tu país por ti... pregunta qué puedes hacer tú por tu país". John F. Kennedy </li>
-						<li>"Un niño, un profesor, un libro, un bolígrafo pueden cambiar el mundo". Malala Yousafzai </li>
-						<li>"Cuando aparece un momento decisivo, define el momento o el momento te definirá a ti". Kevin Costner </li>
-						<li>"La mejor vista es la interior". Malcolm Forbes </li>
-						<li>"La persona más patetica en el mundo es aquella que tiene vista pero no visión". Helen Keller </li>
-						<li>"En los negocios, lo peligroso es no evolucionar". Jeff Bezos </li>
-						<li>"Si estás cambiando el mundo, estás haciendo cosas importantes. Te emociona despertarte a la mañana". Larry Page </li>
-						<li>"El gran don de los humanos es que tenemos el poder de la empatía". Meryl Streep </li>
-						<li>"Si no pides, no consigues". Stevie Wonder </li>
-						<li>"Al final, no recordaremos las palabras de nuestros enemigos, sino el silencio de nuestros amigos". Martin Luther King Jr. </li>
-						<li>"Si es la silla correcta, no toma demasiado tiempo sentirse cómodo en ella". Robert De Niro </li>
-						<li>"La fama no te llena. Te abriga un poco, pero ese calor es temporario". Marilyn Monroe </li>
-						<li>"Nunca aprendes demasiado escuchándote hablar". George Clooney </li>
+						<li><img src="assets/img/LogoVenelatin2.png"  height="148" width="300"/></li>
+						<li><img src="assets/img/LogoVenelatin2.png" height="148" width="300"/></li>
 					</ul>
 				</div>
 			</div>
@@ -108,7 +66,7 @@
 			<div id="Date" class="col-md-12 text-center"></div>
 		</section>
 		<!-- Con este grupo de divs se abre la ventana modal que traera la info a editar el curso-->
-		<div class="modal fade" id="ventanaEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+		<div class="modal fade" id="ventanaEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" >
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="ct"></div>
@@ -116,8 +74,8 @@
 			</div>
 		</div>
 		<footer>
-			<b>C.E.I. CORONEL MIGUEL ANTONIO VAZQUEZ - MARACAIBO, VENEZUELA</b>
-			<p>&copy; Angel Emiro Antunez Villasmil 2015</p>
+			<b>Ing. Jorge Colmenarez - Venezuela <br /> Ing. Rafael Konig - Venezuela</b>
+			<p>&copy; Copyleft <?php echo date('Y'); ?> <a href="http://www.frontuari.com/" target="_blank">www.frontuari.com</a></p>
 		</footer>
 	</body>
 </html>

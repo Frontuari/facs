@@ -22,7 +22,7 @@
 					<input type="text" id="horachkperson" name="horachkperson" class="form-control input-lg text-center" value="<?php echo $hora;?>" readonly>
 			</div>
 			<div class="form-group col-md-12">
-				<label>Cedula Empleado: </label>
+				<label>DNI Empleado: </label>
 					<select id="cedchkperson" name="cedchkperson" class="form-control input-lg" autofocus="on">
 						<option value=""> </option>
 						<?php
@@ -70,7 +70,7 @@
 			field: 'text',
 			direction: 'asc'
 		},
-		placeholder: 'Cedula del Empleado'
+		placeholder: 'DNI del Empleado'
 	});
 </script>
 <script>

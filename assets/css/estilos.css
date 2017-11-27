@@ -10,14 +10,14 @@
 }
 
 body {
-	background: transparent;
+	/* background: transparent;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	font-family: 'BebasNeueRegular';
 	color: #FFFFFF;
-	text-shadow: 0 0 5px #00c6ff;
+	text-shadow: 0 0 5px #00c6ff; */
 }
 a {
 	text-decoration: none;
@@ -31,6 +31,7 @@ header {
 header b {
 	letter-spacing: 15px;
 	font-size:260%;
+	color: #fff;
 }
 section {
 	margin: 4% auto;
@@ -114,6 +115,7 @@ Selectize
 	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
 	font-size: 500%;
 	text-align: center;
+	color: #fff;
 	text-shadow: 0 0 5px #00c6ff;
 	letter-spacing: 15px
 }
@@ -186,14 +188,14 @@ footer {
 	color:#CCCCCC;
 	text-align: center;
 	font-size: 12px;
-	letter-spacing: 5px;
+	letter-spacing: 3px;
 	width: 900px;
 	padding: 5px 1px;
 	position: fixed;
 	bottom: 0;
 	left: 50%;
 	margin-left: -420px;
-	/*background-color:#4a5855;*/
+	background-color:#212121;
 	border-radius:2px 2px 0 0;
 	box-shadow: 0 -1px 4px rgba(0,0,0,0.4);
 	z-index:1;
