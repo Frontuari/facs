@@ -59,7 +59,7 @@ class Main extends CI_Controller {
 		$dia  = $year."-".$mes."-".$day;
 		// datos para la auditoria de la base de datos
 		$fec  = date('Y-m-d');
-		$ope  = 'operador';
+		$ope  = '2'; //	Usuario operador
 
 		/* creo una variable que me va a servir para comparar 
 		 * lo posteado y poder guardarlo en bd correctamente
@@ -90,9 +90,9 @@ class Main extends CI_Controller {
 
 			// realizo el recorrido de los datos q traigo de la bd
 			foreach ($consulta as $r) {
-				$cedconsult = $r->cedchkperson;
-				$diaconsult = $r->diachkperson;
-				$regconsult = $r->registrochk;
+				$cedconsult = $r->dni;
+				$diaconsult = $r->daycheck;
+				$regconsult = $r->eventcheck;
 			}
 
 			// verifico si ya hay una entrada

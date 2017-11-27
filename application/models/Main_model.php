@@ -20,7 +20,7 @@ class Main_model extends CI_Model {
 			return $dia;
 		 } else {
 			foreach ($query->result() as $r) {
-				$dia = $r->diachkperson;
+				$dia = $r->daycheck;
 			}
 			return $dia;
 		}
@@ -28,7 +28,7 @@ class Main_model extends CI_Model {
 	
 	public function consult_persons() 
 	{
-		$this->db->select('cedulaperson,apenomperson');
+		$this->db->select('dni,name');
 		$query = $this->db->get('tbperson');
 		if($query->num_rows() >= 1) {
 			return $query;
@@ -40,12 +40,12 @@ class Main_model extends CI_Model {
 	//consultar si hay una entrada o una salida
 	public function consultar_registro_repetido($ced,$dia,$reg)
 	{
-		$this->db->select('tbperson.cedulaperson AS cedchkperson,tbinout.diachkperson,tbinout.registrochk');
+		$this->db->select('tbperson.dni,tbinout.daycheck,tbinout.eventcheck');
 		$this->db->from('tbinout');
 		$this->db->join('tbperson','tbperson.idperson = tbinout.idperson');
-		$this->db->where('tbperson.cedulaperson',$ced);
-		$this->db->where('tbinout.diachkperson',$dia);
-		$this->db->where('tbinout.registrochk',$reg);
+		$this->db->where('tbperson.dni',$ced);
+		$this->db->where('tbinout.daycheck',$dia);
+		$this->db->where('tbinout.eventcheck',$reg);
 		$query = $this->db->get();
 		if ($query->num_rows() >= 1) {
 
@@ -66,15 +66,15 @@ class Main_model extends CI_Model {
 	public function insertarRegistro($ced,$dia,$hrs,$reg,$fec,$ope) 
 	{
 
-		$idperson = $this->db->query("SELECT idperson FROM tbperson WHERE cedulaperson = '".$ced."'")->row()->idperson;
+		$idperson = $this->db->query("SELECT idperson FROM tbperson WHERE dni = '".$ced."'")->row()->idperson;
 
 		$data = array(
 			'idperson' => $idperson,
-			'diachkperson' => $dia,
-			'horachkperson'=> $hrs,
-			'registrochk'=> $reg,
-			'fechainout' => $fec,
-			'operador'	 => $ope
+			'daycheck' => $dia,
+			'hourcheck'=> $hrs,
+			'eventcheck'=> $reg,
+			'date_inout' => $fec,
+			'iduser'	 => $ope
 			);
 
 		if(!$this->db->insert('tbinout',$data)) {

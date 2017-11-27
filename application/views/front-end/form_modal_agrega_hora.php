@@ -29,7 +29,7 @@
 							// consulta para ubicar las notas del estudiante
 							$personal = $this->Main_model->consult_persons();
 							foreach ($personal->result() as $r) {
-								echo '<option value="'.$r->cedulaperson.'">'.$r->cedulaperson.' - '.$r->apenomperson.'</option>';
+								echo '<option value="'.$r->dni.'">'.$r->dni.' - '.$r->name.'</option>';
 							}
 						?>
 					</select>
