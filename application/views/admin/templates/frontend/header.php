@@ -6,6 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- CSS -->
+	<link href="<?php echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css">
+
 	<!-- Javascript -->
 	<script src="<?php echo base_url()?>assets/js/jQuery-2.1.4.min.js"></script>
 	<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>

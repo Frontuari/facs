@@ -5,7 +5,7 @@
 		<title>Marcador Horario</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta name="description" content="Reloj para marcar la hora de entrada o de salida a una institución">
-		<meta name="author" content="Ing Rafael konig">
+		<meta name="author" content="Ing Rafael Konig">
 		<link href="<?php echo base_url()?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" /> 
 		<link href="<?php echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css">
 		<!-- Alertar con alertify-->
