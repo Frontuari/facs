@@ -4,9 +4,27 @@
 	<title><?=$title?></title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- CSS -->
-	<link href="<?php echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css">
+	<!-- <link href="<?php echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css"> -->
+
+	   <!-- Bootstrap Core CSS -->
+    <link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="<?php echo base_url()?>assets/css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="<?php echo base_url()?>assets/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<?php echo base_url()?>assets/css/startmin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="<?php echo base_url()?>assets/css/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="<?php echo base_url()?>assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 	<!-- Javascript -->
 	<script src="<?php echo base_url()?>assets/js/jQuery-2.1.4.min.js"></script>
@@ -25,4 +43,24 @@
 
 <body>
 	<!-- WRAPPER -->
-	<div id="wrapper">
+	<div id="wrapper" style="min-height: 418px;">
+	 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Startmin</a>
+        </div>
+
+       
+
+        <!-- Top Navigation: Right Menu -->
+        <ul class="nav navbar-right navbar-top-links">
+           
+            <li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url()?>assets/img/user.png" class="img-circle" alt="Avatar"> <span></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="<?php base_url();?>index.php/home/logout"><i class="lnr lnr-exit"></i> <span>Cerrar Sesión</span></a></li>
+								</ul>
+							</li>
+        </ul>	
+		
+						
+	
