@@ -55,7 +55,7 @@
         <ul class="nav navbar-right navbar-top-links">
            
             <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url()?>assets/img/user.png" class="img-circle" alt="Avatar"> <span></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url()?>assets/img/user2.png" class="img-circle" alt="Avatar"> <span></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 								<ul class="dropdown-menu">
 									<li><a href="<?php base_url();?>index.php/home/logout"><i class="lnr lnr-exit"></i> <span>Cerrar Sesión</span></a></li>
 								</ul>
