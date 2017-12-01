@@ -34,28 +34,32 @@
 						?>
 					</select>
 			</div>
-		</h3>
-			<div class="modal-footer col-md-12 col-sd-3 btn-group">
-				<button 
-					type="submit" 
-					name="posteo" 
-					id="posteo" 
-					class="btn btn-primary btn-large" 
-					value="ENTRADA"
-					title="Registrar ENTRADA" >
-					<i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;ENTRADA
-				</button>
-				<button 
-					type="submit" 
-					name="posteo" 
-					id="posteo" 
-					class="btn btn-danger btn-large col-md-push-1 col-sm-push-1" 
-					value="SALIDA" 
-					title="Registrar SALIDA" >SALIDA&nbsp;&nbsp;
-					<i class="glyphicon glyphicon-share-alt"></i>
-				</button>
+			<div class="form-group col-md-6">
+				<label>Contraseña: </label>
+				<input type="password" id="passwd" name="passwd" placeholder="Por favor, ingrese su contraseña" class="form-control input-lg text-center">
 			</div>
-			<div id="ajaxcontent"></div>
+		</h3>
+		<div class="modal-footer col-md-12 col-sd-3 btn-group">
+			<button 
+				type="submit" 
+				name="posteo" 
+				id="posteo" 
+				class="btn btn-primary btn-large" 
+				value="ENTRADA"
+				title="Registrar ENTRADA" >
+				<i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;ENTRADA
+			</button>
+			<button 
+				type="submit" 
+				name="posteo" 
+				id="posteo" 
+				class="btn btn-danger btn-large col-md-push-1 col-sm-push-1" 
+				value="SALIDA" 
+				title="Registrar SALIDA" >SALIDA&nbsp;&nbsp;
+				<i class="glyphicon glyphicon-share-alt"></i>
+			</button>
+		</div>
+		<div id="ajaxcontent"></div>
 		</div>
 	</div>
 </form>
@@ -91,22 +95,41 @@
 		 excluded: ':disabled',
 		 fields: {
 			 cedchkperson: {
-				 validators: {
-					 notEmpty: {
-						 message: 'La Cedula del Empleado es requerida'
-					 }
-				 }
+				validators: {
+					notEmpty: {
+						message: 'La Cedula del Empleado es requerida'
+					}
+				}
+			 },
+			 passwd: {
+				validators: {
+					notEmpty: {
+						message: 'La Contraseña es requerida'
+					},
+					remote: {
+						url: '<?=base_url()?>index.php/main/check_employeed',
+						//	Send {cedchkperson: 'its value',passwd: 'its value'}
+						data: function(validator, $field, value){
+							return {
+								cedchkperson: validator.getFieldElements('cedchkperson').val(),
+								passwd: validator.getFieldElements('passwd').val()
+							};
+						},
+						message: 'Contraseña invalida',
+						type: 'POST'
+					}
+				}
 			 }
 		 }
-	});
-</script>
-<script>
-	//callback del manejador para enviar el formulario completo
-	$("#form-registro").submit(function(event)
-	{
-		event.preventDefault(); //DETENER el comportamiento estandar del "action"
+	})
+	.on('err.validator.fv', function(e,data){
+		console.log(data);
+	})
+	.on('success.form', function(e){
+		e.preventDefault(); //DETENER el comportamiento estandar del "action"
 	    var postData = $(this).serializeArray();// con esto revisa todo lo que sea posteable en el form y lo recoje en una variable
 	    var formURL = $(this).attr("action");
+	    console.log(postData);
 	    $.ajax(
 	    {
 	        url : formURL,
@@ -121,10 +144,10 @@
 	        error: function(jqXHR, textStatus, errorThrown) 
 	        {
 	        	console.log(jqXHR);
-	        	console.log(textStatus);
-	        	console.log(errorThrown);
-	            alert("Error al procesar la petición: "+errorThrown);
+	            alertify.alert("Error al procesar la petición: "+errorThrown);
 	        }
 	    });
 	});
+</script>
+<script>
 </script>

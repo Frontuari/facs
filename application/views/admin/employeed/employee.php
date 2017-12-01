@@ -1,9 +1,9 @@
 <div class="panel">
 	<div class="panel-heading">
-		<h3 class="panel-title"><i class="fa fa-person"></i> Formularios / Reportes</h3>
+		<h3 class="panel-title"><i class="fa fa-person"></i> Listado de Empleados</h3>
 	</div>
 	<?php if(!empty($this->session->flashdata('msg'))):?>
-		<script type="text/javascript">alerta("<?=$this->session->flashdata('msg')?>");</script>
+		<script type="text/javascript">alertify.alert("<?=$this->session->flashdata('msg')?>");</script>
 	<?php endif;?>
 	<div class="panel-body">
 		<table class="table table-hover datatables">

@@ -25,7 +25,10 @@
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url()?>assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+	<!-- Alertar con alertify-->
+	<link href="<?php echo base_url()?>assets/js/alertify/themes/alertify.core.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url()?>assets/js/alertify/themes/alertify.default.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/js/DataTables-1.10.12/media/css/dataTables.jqueryui.min.css">
 	<!-- Javascript -->
 	<script src="<?php echo base_url()?>assets/js/jQuery-2.1.4.min.js"></script>
 	<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
@@ -38,6 +41,9 @@
 	<script src="<?php echo base_url()?>assets/js/plugins/jsPDF/extensions/jspdf.plugin.autotable.js"></script>
 	<script src="<?php echo base_url()?>assets/js/plugins/tableExport.jquery.plugin/tableExport.min.js"></script>
 	<script src="<?php echo base_url()?>assets/js/manage-tables.js"></script>
+	<!-- Alertar con alertify-->
+	<script src="<?php echo base_url()?>assets/js/alertify/alertify.js"></script>
+	<script src="<?php echo base_url()?>assets/js/facs.js"></script>
 	<!-- ICONS -->
 </head>
 
@@ -45,21 +51,14 @@
 	<!-- WRAPPER -->
 	<div id="wrapper" style="min-height: 418px;">
 	 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Startmin</a>
-        </div>
-
-       
-
         <!-- Top Navigation: Right Menu -->
         <ul class="nav navbar-right navbar-top-links">
-           
             <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url()?>assets/img/user2.png" class="img-circle" alt="Avatar"> <span></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="<?php base_url();?>index.php/home/logout"><i class="lnr lnr-exit"></i> <span>Cerrar Sesión</span></a></li>
-								</ul>
-							</li>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url()?>assets/img/user2.png" class="img-circle" alt="Avatar"> <span></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+				<ul class="dropdown-menu">
+					<li><a href="<?php base_url();?>home/logout"><i class="lnr lnr-exit"></i> <span>Cerrar Sesión</span></a></li>
+				</ul>
+			</li>
         </ul>	
 		
 						

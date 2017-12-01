@@ -51,7 +51,7 @@ class Employed extends Report
 	*/
 	public function get_info($idperson)
 	{
-		$query = $this->db->query("SELECT idperson,dni,name,passwd,urlphoto,gender,birthday,place_birth,email,
+		$query = $this->db->query("SELECT idperson,dni,name,passwd,gender,birthday,place_birth,email,
 		level_education,charge,phone_number,mobile_phone,address,status,dateperson,iduser 
 		FROM tbperson WHERE idperson = $idperson");
 

@@ -38,7 +38,7 @@ class Login extends CI_Controller {
 
 		if(!$this->User->login($username, $password))
 		{
-			$this->form_validation->set_message('login_check', 'Usuario/Contraseña invalido '.$password);
+			$this->form_validation->set_message('login_check', 'Usuario/Contraseña invalido ');
 
 			return FALSE;
 		}

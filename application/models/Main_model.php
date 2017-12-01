@@ -47,7 +47,7 @@ class Main_model extends CI_Model {
 		$this->db->where('tbinout.daycheck',$dia);
 		$this->db->where('tbinout.eventcheck',$reg);
 		$query = $this->db->get();
-		if ($query->num_rows() >= 1) {
+		if ($query->num_rows() == 1) {
 
             foreach ($query->result() as $fila) {
                 $datos[] = $fila;
@@ -57,7 +57,7 @@ class Main_model extends CI_Model {
 
         } else {
 
-            return 'nada';
+            return array('0' => 'nada');
 
         }
 	}
@@ -87,6 +87,26 @@ class Main_model extends CI_Model {
 
 		}
 
+	}
+
+	public function login($dni, $password)
+	{
+		$query = $this->db->query("SELECT * FROM tbperson WHERE status = 'ACTIVO' AND dni = '$dni' LIMIT 1");
+
+		if($query->num_rows() == 1)
+		{
+			$row = $query->row();
+
+			// compare passwords 
+			$this->load->library('encrypt');
+
+			if ($this->encrypt->decode($password) == $this->encrypt->decode($row->passwd))
+			{
+				return TRUE;
+			}
+		}
+
+		return FALSE;
 	}
 
 }

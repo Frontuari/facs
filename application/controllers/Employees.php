@@ -91,7 +91,6 @@ class Employees extends CI_Controller {
 				'dni' => $this->input->post('dni'),
 				'name' => $this->input->post('name'),
 				'passwd' => $this->encrypt->encode($this->input->post('passwd')),
-				'urlphoto' => $this->input->post('urlphoto'),
 				'gender' => $this->input->post('gender'),
 				'birthday' => $this->input->post('birthday'),
 				'place_birth' => $this->input->post('place_birth'),

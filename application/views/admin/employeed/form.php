@@ -3,15 +3,11 @@
 		<h3><i class="fa fa-television"></i> <?php print $title; ?></h3>
 	</div>
 	<?php if(!empty($this->session->flashdata('msg'))):?>
-		<script type="text/javascript">alerta("<?=$this->session->flashdata('msg')?>");</script>
+		<script type="text/javascript">alertify.alert("<?=$this->session->flashdata('msg')?>");</script>
 	<?php endif;?>
 	<div class="panel-body">
 		<div align="center" style="color:red"><?php echo validation_errors(); ?></div>
 		<?php print form_open("employees/save/".$employees->idperson); ?>
-			<div class="form-group">
-				<label for="urlphoto" class="label label-default">Foto: </label>
-				<input type="file" id="urlphoto" name="urlphoto" class="form-control" value="<?=$employees->urlphoto?>" required>
-			</div>
 			<div class="form-group">
 				<label for="dni" class="label label-default">DNI: </label>
 				<input type="hidden" name="employee_dni" value="<?=$employees->dni?>">
@@ -36,6 +32,10 @@
 			<div class="form-group">
 				<label for="address" class="label label-default">Dirección de Habitación: </label>
 				<textarea id="address" name="address" class="form-control" required ><?=$employees->address?></textarea>
+			</div>
+			<div class="form-group">
+				<label for="birthday" class="label label-default">Fecha Nacimiento: </label>
+				<input type="date" id="birthday" name="birthday" class="form-control" value="<?=$employees->birthday?>" required>
 			</div>
 			<div class="form-group">
 				<label for="place_birth" class="label label-default">Lugar Nacimiento: </label>
@@ -63,6 +63,6 @@
 			</div>
 			<input type="hidden" id="status" name="status" value="<?=isset($employees->status) ? 'Y' : 'N' ?>">
 			<button type="submit" value="<?=$action?>" name="event" class="btn btn-success"><i class="fa fa-floppy-o"></i> Guardar</button>
-			<button type="button" class="btn btn-info" onclick="volver('<?=base_url()?>employees')"><i class="fa fa-reply"></i> Volver</button>
+			<button type="button" class="btn btn-info" onclick="volver('<?=base_url()?>index.php/employees')"><i class="fa fa-reply"></i> Volver</button>
 		<?php print form_close(); ?>
 	</div>

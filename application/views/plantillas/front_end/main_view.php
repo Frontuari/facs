@@ -11,6 +11,7 @@
 		<!-- Alertar con alertify-->
 		<link href="<?php echo base_url()?>assets/js/alertify/themes/alertify.core.css" rel="stylesheet" type="text/css">
 		<link href="<?php echo base_url()?>assets/js/alertify/themes/alertify.default.css" rel="stylesheet" type="text/css">
+		<script src="<?php echo base_url()?>assets/js/alertify/alertify.js"></script>
 		<script>
 			// buscamos el metodo para los tipos de navegadores
 			function launchFullScreen(element) {
@@ -33,8 +34,8 @@
 				<div class="marquesina">
 					
 					<ul class="col-md-12 text-center">
-						<li><img src="assets/img/LogoVenelatin2.png"  height="148" width="300"/></li>
-						<li><img src="assets/img/LogoVenelatin2.png" height="148" width="300"/></li>
+						<li><img src="<?=base_url()?>assets/img/LogoVenelatin2.png"  height="148" width="300"/></li>
+						<li><img src="<?=base_url()?>assets/img/LogoVenelatin2.png" height="148" width="300"/></li>
 					</ul>
 				</div>
 			</div>
@@ -89,8 +90,6 @@
 <script src="<?php echo base_url()?>assets/js/jquery-backstretch.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.easing.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.easy-ticker.js"></script>
-<!-- Alertar con alertify-->
-	<script src="<?php echo base_url()?>assets/js/alertify/alertify.js"></script>
 <script>
  	$("#saveAlertFine").delay(1500).fadeOut(900);// para mostrar las alertas y ocultarlas
  	$("#saveAlertError").delay(1500).fadeOut(900);// para mostrar las alertas y ocultarlas

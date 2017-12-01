@@ -28,17 +28,6 @@ class Main extends CI_Controller {
 			// redireccion a la pagina inicial
 			$this->load->view('plantillas/front_end/main_view');
 		}
-
-		/*$sections = array(
-			'config'  => TRUE,
-			'queries' => TRUE,
-			'controller_info' => TRUE,
-			'uri_strig' => TRUE,
-			'session_data' => TRUE
-
-			);
-		$this->output->set_personiler_sections($sections);
-		$this->output->enable_personiler(TRUE);*/
 	}
 
 	//con esta función abrimos el modal
@@ -55,8 +44,12 @@ class Main extends CI_Controller {
 		$ced  = $this->input->post('cedchkperson');
 		$hrs  = time($this->input->post('horachkperson'));
 		$diaU = $this->input->post('diachkperson');
-			// separo el dato de la fecha para darle un formato que permita que la bd lo pueda reconocer y guardar
-			list($day, $mes, $year) = explode("-", $diaU);
+		//	cargo la libreria encrypt
+		$this->load->library('encrypt');
+		//	guardo la contraseña encriptada para enviar a la base de datos
+		$passwd = $this->encrypt->encode($this->input->post('password'));
+		// separo el dato de la fecha para darle un formato que permita que la bd lo pueda reconocer y guardar
+		list($day, $mes, $year) = explode("-", $diaU);
 		$dia  = $year."-".$mes."-".$day;
 		// datos para la auditoria de la base de datos
 		$fec  = date('Y-m-d');
@@ -70,19 +63,19 @@ class Main extends CI_Controller {
 
 		// primero verifico si ya se creo una entrada en la misma fecha
 		$consulta = $this->Main_model->consultar_registro_repetido($ced,$dia,$reg);
-		if($consulta == 'nada') {
+		if($consulta[0] == 'nada') {
 
 			// luego y si no hubo una entrada, inserto los datos de la entrada en si
 			$insertar_entrada = $this->Main_model->insertarRegistro($ced,$dia,$hrs,$reg,$fec,$ope);
 			
 			if ($insertar_entrada == 'error') {
 				
-				$this->session->set_flashdata('mensaje', '¿Ya se ha registrado una '.$reg.' Anteriormente..! <br> Por favor verifique.');
+				$this->session->set_flashdata('mensaje', 'Ya se ha registrado una '.$reg.' anteriormente..! <br> Por favor verifique.');
 				redirect('main/index');
 			
 			 } elseif ($insertar_entrada == 'correcto') {
 				
-				$this->session->set_flashdata('mensaje', 'La '.$reg.' se Registro Correctamente!');
+				$this->session->set_flashdata('mensaje', 'La '.$reg.' se registro correctamente!');
 				redirect('main/index');
 			
 			}
@@ -95,27 +88,24 @@ class Main extends CI_Controller {
 				$diaconsult = $r->daycheck;
 				$regconsult = $r->eventcheck;
 			}
-
 			// verifico si ya hay una entrada
 			if ($regconsult == $reg) {
-
 				// si existe un registro de entrada previo hecho en este mismo dia entonces le informo del error al usuario		
-				$this->session->set_flashdata('mensaje', $consulta[0].' $Ya se ha registrado una '.$reg.'<br> Por favor verifique.');
+				$this->session->set_flashdata('mensaje', 'Ya se ha registrado una '.$reg.'<br> Por favor verifique.');
 				redirect('main/index');
 			
 			 } else {
-
 			 	// luego y si no hubo una entrada, inserto los datos de la entrada en si
 				$insertar_entrada = $this->Main_model->insertarRegistro($ced,$dia,$hrs,$reg,$fec,$ope);
 				
 				if ($insertar_entrada == 'error') {
 					
-					$this->session->set_flashdata('mensaje', '¡Ya se ha registrado una '.$reg.' Anteriormente..! <br> Por favor verifique.');
+					$this->session->set_flashdata('mensaje', 'Ya se ha registrado una '.$reg.' anteriormente..! <br> Por favor verifique.');
 					redirect('main/index');
 				
 				 } elseif ($insertar_entrada == 'correcto') {
 					
-					$this->session->set_flashdata('mensaje', 'La '.$reg.' se Registro Correctamente!');
+					$this->session->set_flashdata('mensaje', 'La '.$reg.' se registro correctamente!');
 					redirect('main/index');
 				
 				}
@@ -123,6 +113,24 @@ class Main extends CI_Controller {
 			}
 		}
 
+	}
+	//	comprobamos si el usuario y la clave son validos
+	public function check_employeed()
+	{
+		$this->load->library('encrypt');
+		/*
+		Encode the password with library encrypt of CI
+		*/
+		$dniperson = $this->input->post('cedchkperson');
+		$password = $this->encrypt->encode($this->input->post('passwd'));
+
+		if(!$this->Main_model->login($dniperson, $password))
+		{
+			echo json_encode(array('valid' => false));
+		}
+		else{
+			echo json_encode(array('valid' => true));
+		}
 	}
 
 }
