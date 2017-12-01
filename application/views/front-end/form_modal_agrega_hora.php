@@ -36,7 +36,7 @@
 			</div>
 			<div class="form-group col-md-6">
 				<label>Contraseña: </label>
-				<input type="password" id="passwd" name="passwd" placeholder="Por favor, ingrese su contraseña" class="form-control input-lg text-center">
+				<input type="password" id="passwd" name="passwd"  class="form-control input-lg text-center">
 			</div>
 		</h3>
 		<div class="modal-footer col-md-12 col-sd-3 btn-group">

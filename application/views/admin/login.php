@@ -28,7 +28,7 @@
 	  <div align="center" style="color:red"><?php echo validation_errors(); ?></div>
         <span class="fontawesome-user"></span>
 		  <!-- <input type="text" id="user" placeholder="Username"> -->
-		  <input type="text"  name="username" id="signup-email" value="" placeholder="Usuario o Email">
+		  <input type="text"  name="username" id="signup-email" value="" placeholder="Usuario">
        
         <span class="fontawesome-lock"></span>
 		  <!-- <input type="password" id"pass" placeholder="Password"> -->
