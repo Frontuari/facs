@@ -23,7 +23,7 @@
 			</div>
 			<div class="form-group">
 				<label for="gender" class="label label-default">Género: </label>
-				<select class="form-control" id="gender" name="gender" required>
+				<select class="form-control" id="gender" name="gender" >
 					<option value=NULL <?php echo (empty($employees->gender) ? "selected" : "");?>>Seleccione una opción</option>
 					<option value="F" <?php echo ($employees->gender == "F" ? "selected" : "");?>>Femenino</option>
 					<option value="M" <?php echo ($employees->gender == "M" ? "selected" : "");?>>Masculino</option>
@@ -31,15 +31,15 @@
 			</div>
 			<div class="form-group">
 				<label for="address" class="label label-default">Dirección de Habitación: </label>
-				<textarea id="address" name="address" class="form-control" required ><?=$employees->address?></textarea>
+				<textarea id="address" name="address" class="form-control"  ><?=$employees->address?></textarea>
 			</div>
 			<div class="form-group">
 				<label for="birthday" class="label label-default">Fecha Nacimiento: </label>
-				<input type="date" id="birthday" name="birthday" class="form-control" value="<?=$employees->birthday?>" required>
+				<input type="date" id="birthday" name="birthday" class="form-control" value="<?=$employees->birthday?>" >
 			</div>
 			<div class="form-group">
 				<label for="place_birth" class="label label-default">Lugar Nacimiento: </label>
-				<input type="text" id="place_birth" name="place_birth" class="form-control" value="<?=$employees->place_birth?>" required>
+				<input type="text" id="place_birth" name="place_birth" class="form-control" value="<?=$employees->place_birth?>" >
 			</div>
 			<div class="form-group">
 				<label for="email" class="label label-default">Correo Electrónico: </label>
@@ -47,19 +47,19 @@
 			</div>
 			<div class="form-group">
 				<label for="level_education" class="label label-default">Nivel de Educación: </label>
-				<input type="text" id="leve_education" name="level_education" class="form-control" value="<?=$employees->level_education?>" required>
+				<input type="text" id="leve_education" name="level_education" class="form-control" value="<?=$employees->level_education?>" >
 			</div>
 			<div class="form-group">
 				<label for="charge" class="label label-default">Cargo: </label>
-				<input type="text" id="charge" name="charge" class="form-control" value="<?=$employees->charge?>" required>
+				<input type="text" id="charge" name="charge" class="form-control" value="<?=$employees->charge?>" >
 			</div>
 			<div class="form-group">
 				<label for="phone_number" class="label label-default">Nro Télefono: </label>
-				<input type="text" id="phone_number" name="phone_number" class="form-control" value="<?=$employees->phone_number?>" required>
+				<input type="text" id="phone_number" name="phone_number" class="form-control" value="<?=$employees->phone_number?>" >
 			</div>
 			<div class="form-group">
 				<label for="mobile_phone" class="label label-default">Nro Celular: </label>
-				<input type="text" id="mobile_phone" name="mobile_phone" class="form-control" value="<?=$employees->mobile_phone?>" required>
+				<input type="text" id="mobile_phone" name="mobile_phone" class="form-control" value="<?=$employees->mobile_phone?>" >
 			</div>
 			<input type="hidden" id="status" name="status" value="<?=isset($employees->status) ? 'Y' : 'N' ?>">
 			<button type="submit" value="<?=$action?>" name="event" class="btn btn-success"><i class="fa fa-floppy-o"></i> Guardar</button>

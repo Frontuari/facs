@@ -21,18 +21,10 @@
 				<label>Hora: </label>
 					<input type="text" id="horachkperson" name="horachkperson" class="form-control input-lg text-center" value="<?php echo $hora;?>" readonly>
 			</div>
-			<div class="form-group col-md-12">
-				<label>DNI Empleado: </label>
-					<select id="cedchkperson" name="cedchkperson" class="form-control input-lg" autofocus="on">
-						<option value=""> </option>
-						<?php
-							// consulta para ubicar las notas del estudiante
-							$personal = $this->Main_model->consult_persons();
-							foreach ($personal->result() as $r) {
-								echo '<option value="'.$r->dni.'">'.$r->dni.' - '.$r->name.'</option>';
-							}
-						?>
-					</select>
+			
+			<div class="form-group col-md-6">
+				<label>DNI Empleado: </label>				
+				<input type="text" id="cedchkperson" name="cedchkperson"  class="form-control input-lg text-center">
 			</div>
 			<div class="form-group col-md-6">
 				<label>Contraseña: </label>
@@ -67,7 +59,7 @@
 <script src='<?php echo base_url()?>assets/js/FormValidation/formValidation_bootstrap.min.js'></script>
 <script src='<?php echo base_url()?>assets/js/FormValidation/formValidation_language_es_ES.min.js'></script>
 <script src="<?php echo base_url()?>assets/js/selectize.js"></script>
-<script>
+<!-- <script>
 	$('#cedchkperson').selectize({
 		create: true,
 		sortField: {
@@ -76,7 +68,7 @@
 		},
 		placeholder: 'DNI del Empleado'
 	});
-</script>
+</script> -->
 <script>
 	// validacion de campos
 	$('#form-registro').formValidation({
