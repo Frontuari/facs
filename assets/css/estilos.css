@@ -258,3 +258,8 @@ footer {
     font-size: 24px;
 	text-align: justify;
 }
+
+.alertify-dialog {
+    padding: 25px;
+    background-color: #F5F5F5;
+}

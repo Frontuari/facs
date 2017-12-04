@@ -84,8 +84,9 @@
 	}
 	.alertify-dialog {
 		padding: 25px;
-		background-color: #FF0000;
+		background-color: #F5F5F5;
 	}
+
 		.alertify-resetFocus {
 			border: 0;
 			clip: rect(0 0 0 0);
