@@ -36,7 +36,7 @@ class Employed extends Report
 			FROM tbperson p  
 			INNER JOIN tbinout i ON p.idperson = i.idperson 
 				$clauseWhere 
-			ORDER BY i.date_inout ASC");
+			ORDER BY i.daycheck,i.hourcheck ASC");
 
 		return $query->result();
 	}
