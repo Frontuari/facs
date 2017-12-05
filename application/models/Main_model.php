@@ -40,6 +40,17 @@ class Main_model extends CI_Model {
 	//consultar si hay una entrada o una salida
 	public function consultar_registro_repetido($ced,$dia,$reg)
 	{
+
+		if($reg=="SALIDA"){
+			$query = $this->db->query("SELECT * FROM tbinout io 
+			INNER JOIN tbperson p ON io.idperson = p.idperson 
+			WHERE p.dni = '$ced' AND io.daycheck = '$dia' AND io.eventcheck = 'ENTRADA'");
+			if($query->num_rows() == 0)
+			{
+				return array('1' => 'error');	
+			}
+		}
+
 		$this->db->select('tbperson.dni,tbinout.daycheck,tbinout.eventcheck');
 		$this->db->from('tbinout');
 		$this->db->join('tbperson','tbperson.idperson = tbinout.idperson');

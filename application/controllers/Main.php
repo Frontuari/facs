@@ -83,7 +83,12 @@ class Main extends CI_Controller {
 				redirect('main/index');
 			}
 
-		} else {
+		} 
+		else if($consulta[1] == 'error'){
+			$this->session->set_flashdata('mensaje', 'No es posible registrar la SALIDA, antes debe registrar una ENTRADA! <br> Por favor verifique.');
+			redirect('main/index');
+		}
+		else {
 
 			// realizo el recorrido de los datos q traigo de la bd
 			foreach ($consulta as $r) {
