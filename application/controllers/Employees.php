@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set("America/Caracas");
+date_default_timezone_set("America/Lima");
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Employees extends CI_Controller {

@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set("America/Caracas");
+date_default_timezone_set("America/Lima");
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
@@ -78,6 +78,9 @@ class Main extends CI_Controller {
 				$this->session->set_flashdata('mensaje', 'La '.$reg.' se registro correctamente!');
 				redirect('main/index');
 			
+			}elseif($insertar_entrada == 'error' & $reg == 'SALIDA'){
+				$this->session->set_flashdata('mensaje', 'No puede Registrar una '.$reg.' Sin Realizar una Entrada..! <br> Por favor verifique.');
+				redirect('main/index');
 			}
 
 		} else {
