@@ -1,5 +1,5 @@
 <?php 
-	setlocale(LC_TIME,'es_ES.UTF-8');
+	setlocale(LC_TIME,'es_PE.UTF-8');
 	$dia = date('d-m-Y');
 	$hora= date('h:i:s A');
 ?>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="form-group col-md-6">
 				<label>Hora: </label>
-					<input type="text" id="horachkperson" name="horachkperson" class="form-control input-lg text-center" value="<?php echo $hora;?>" readonly>
+					<input type="text" id="horachkperson" name="horachkperson" class="form-control input-lg text-center" value="" readonly>
 			</div>
 			
 			<div class="form-group col-md-6">
@@ -69,6 +69,47 @@
 		placeholder: 'DNI del Empleado'
 	});
 </script> -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#horachkperson').val(formatDate());
+	});
+	function calcTime(offset) {
+	    // creamos el objeto Date (la selecciona de la máquina cliente)
+	    d = new Date();
+	 
+	    // lo convierte  a milisegundos
+	    // añade la dirferencia horaria
+	    // recupera la hora en formato UTC
+	    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+	 
+	    // crea un nuevo objeto Date usando la diferencia dada.
+	    nd = new Date(utc + (3600000*offset));
+	 
+	    // devuelve la hora con la nueva zona horaria.
+	    return nd;
+	}
+
+	function formatDate() {
+	  var d = calcTime(-5);
+	  var hh = d.getHours();
+	  var m = d.getMinutes();
+	  var s = d.getSeconds();
+	  var dd = "AM";
+	  var h = hh;
+	  if (h >= 12) {
+	    h = hh - 12;
+	    dd = "PM";
+	  }
+	  if (h == 0) {
+	    h = 12;
+	  }
+	  m = m < 10 ? "0" + m : m;
+
+	  s = s < 10 ? "0" + s : s;
+
+	  return hh+":"+m+":"+s+" "+dd;
+	}
+</script>
 <script>
 	// validacion de campos
 	$('#form-registro').formValidation({
@@ -121,7 +162,6 @@
 		e.preventDefault(); //DETENER el comportamiento estandar del "action"
 	    var postData = $(this).serializeArray();// con esto revisa todo lo que sea posteable en el form y lo recoje en una variable
 	    var formURL = $(this).attr("action");
-	    console.log(postData);
 	    $.ajax(
 	    {
 	        url : formURL,

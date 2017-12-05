@@ -128,13 +128,30 @@
 	});
 </script>
 <script>
+	function calcTime(offset) {
+	    // creamos el objeto Date (la selecciona de la máquina cliente)
+	    d = new Date();
+	 
+	    // lo convierte  a milisegundos
+	    // añade la dirferencia horaria
+	    // recupera la hora en formato UTC
+	    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+	 
+	    // crea un nuevo objeto Date usando la diferencia dada.
+	    nd = new Date(utc + (3600000*offset));
+	 
+	    // devuelve la hora con la nueva zona horaria.
+	    return nd;
+	}
+</script>
+<script>
 	$(document).ready(function() {
 	// Create two variable with the names of the months and days in an array
 	var monthNames = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]; 
 	var dayNames= ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
 
-	// Create a newDate() object
-	var newDate = new Date();
+	// Create a newDate() object with TimeZone Lima
+	var newDate = calcTime(-5);
 	// Extract the current date from Date object
 	newDate.setDate(newDate.getDate());
 	// Output the day, date, month and year   
@@ -142,21 +159,21 @@
 
 	setInterval( function() {
 		// Create a newDate() object and extract the seconds of the current time on the visitor's
-		var seconds = new Date().getSeconds();
+		var seconds = calcTime(-5).getSeconds();
 		// Add a leading zero to seconds value
 		$("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
 		},1000);
 		
 	setInterval( function() {
 		// Create a newDate() object and extract the minutes of the current time on the visitor's
-		var minutes = new Date().getMinutes();
+		var minutes = calcTime(-5).getMinutes();
 		// Add a leading zero to the minutes value
 		$("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
 	    },1000);
 		
 	setInterval( function() {
 		// Create a newDate() object and extract the hours of the current time on the visitor's
-		var hours = new Date().getHours();
+		var hours = calcTime(-5).getHours();
 		// Add a leading zero to the hours value
 		$("#hours").html(( hours < 10 ? "0" : "" ) + hours);
 	    }, 1000);	
