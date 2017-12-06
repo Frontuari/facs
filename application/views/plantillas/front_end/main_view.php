@@ -76,7 +76,10 @@
 		</div>
 		<footer>
 			<b>Ing. Jorge Colmenarez - Venezuela <br /> Ing. Rafael Konig - Venezuela <br /> Ing. Juan Herrera - Perú</b>
-			<p>&copy; Copyleft <?php echo date('Y'); ?> <a href="http://www.frontuari.com/" target="_blank">Desarrollado por: www.frontuari.com</a></p>
+			<p>&copy; Copyleft <?php echo date('Y'); ?> <a href="http://www.frontuari.com/" target="_blank">Desarrollado por: www.frontuari.com</a>
+				<br />
+				<a href="http://eip.com.pe/facs/index.php/login" target="_blank">Dashboard</a>
+			</p>
 		</footer>
 	</body>
 </html>
