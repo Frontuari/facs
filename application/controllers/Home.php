@@ -31,7 +31,7 @@ class Home extends CI_Controller
 				'gender' => $row->gender,
 				'email' => $row->email,
 				'daycheck' => $row->daycheck,
-				'hourcheck' => date('H:m:s',$row->hourcheck),
+				'hourcheck' => $row->hourcheck,
 				'eventcheck' => $row->eventcheck
 			));
 		}

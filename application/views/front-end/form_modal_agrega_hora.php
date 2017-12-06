@@ -19,7 +19,7 @@
 			</div>
 			<div class="form-group col-md-6">
 				<label>Hora: </label>
-					<input type="text" id="horachkperson" name="horachkperson" class="form-control input-lg text-center" value="" readonly>
+					<input type="text" id="horachkperson" name="horachkperson" class="form-control input-lg text-center" value="<?=$hora?>" readonly>
 			</div>
 			
 			<div class="form-group col-md-6">
@@ -70,9 +70,9 @@
 	});
 </script> -->
 <script type="text/javascript">
-	$(document).ready(function() {
+	/*$(document).ready(function() {
 		$('#horachkperson').val(formatDate());
-	});
+	});*/
 	function calcTime(offset) {
 	    // creamos el objeto Date (la selecciona de la máquina cliente)
 	    d = new Date();

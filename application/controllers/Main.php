@@ -42,7 +42,7 @@ class Main extends CI_Controller {
 	{
 		// recibo los posteos desde el modal form_modal_agregahora
 		$ced  = $this->input->post('cedchkperson');
-		$hrs  = time($this->input->post('horachkperson'));
+		$hrs  = $this->input->post('horachkperson');//time($this->input->post('horachkperson'));
 		$diaU = $this->input->post('diachkperson');
 		//	cargo la libreria encrypt
 		$this->load->library('encrypt');
